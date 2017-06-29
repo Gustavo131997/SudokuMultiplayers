@@ -8,6 +8,7 @@ import Componentes.ValidarIngresoCelda;
 import java.awt.HeadlessException;
 import java.util.Random;
 import javax.swing.JOptionPane;
+import socket.SocketCliente;
 import sudoku.Matriz;
 
 public class SudokuOriginal extends javax.swing.JFrame {
@@ -16,9 +17,6 @@ public class SudokuOriginal extends javax.swing.JFrame {
     int m2[][] = new int [9][9];
     public SudokuOriginal() {
         initComponents();
-        
-        labelStart.setVisible(false);
-        labelInd.setVisible(false);
     }
 
     
@@ -116,13 +114,101 @@ public class SudokuOriginal extends javax.swing.JFrame {
         txt9_4 = new javax.swing.JTextField();
         txt9_5 = new javax.swing.JTextField();
         txt9_6 = new javax.swing.JTextField();
-        btnCargarMatriz = new javax.swing.JButton();
-        labelInicio = new javax.swing.JLabel();
         btnReiniciar = new javax.swing.JButton();
         btnStart = new javax.swing.JButton();
-        btnIntentar = new javax.swing.JButton();
-        labelStart = new javax.swing.JLabel();
-        labelInd = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        txt7_10 = new javax.swing.JTextField();
+        txt7_11 = new javax.swing.JTextField();
+        txt7_12 = new javax.swing.JTextField();
+        txt8_10 = new javax.swing.JTextField();
+        txt8_11 = new javax.swing.JTextField();
+        txt8_12 = new javax.swing.JTextField();
+        txt9_10 = new javax.swing.JTextField();
+        txt9_11 = new javax.swing.JTextField();
+        txt9_12 = new javax.swing.JTextField();
+        jPanel11 = new javax.swing.JPanel();
+        txt4_10 = new javax.swing.JTextField();
+        txt4_11 = new javax.swing.JTextField();
+        txt4_12 = new javax.swing.JTextField();
+        txt5_10 = new javax.swing.JTextField();
+        txt5_11 = new javax.swing.JTextField();
+        txt5_12 = new javax.swing.JTextField();
+        txt6_10 = new javax.swing.JTextField();
+        txt6_11 = new javax.swing.JTextField();
+        txt6_12 = new javax.swing.JTextField();
+        jPanel12 = new javax.swing.JPanel();
+        txt1_10 = new javax.swing.JTextField();
+        txt1_11 = new javax.swing.JTextField();
+        txt1_12 = new javax.swing.JTextField();
+        txt2_10 = new javax.swing.JTextField();
+        txt2_11 = new javax.swing.JTextField();
+        txt2_12 = new javax.swing.JTextField();
+        txt3_10 = new javax.swing.JTextField();
+        txt3_11 = new javax.swing.JTextField();
+        txt3_12 = new javax.swing.JTextField();
+        jPanel13 = new javax.swing.JPanel();
+        txt7_13 = new javax.swing.JTextField();
+        txt7_14 = new javax.swing.JTextField();
+        txt7_15 = new javax.swing.JTextField();
+        txt8_13 = new javax.swing.JTextField();
+        txt8_14 = new javax.swing.JTextField();
+        txt8_15 = new javax.swing.JTextField();
+        txt9_13 = new javax.swing.JTextField();
+        txt9_14 = new javax.swing.JTextField();
+        txt9_15 = new javax.swing.JTextField();
+        jPanel14 = new javax.swing.JPanel();
+        txt4_13 = new javax.swing.JTextField();
+        txt4_14 = new javax.swing.JTextField();
+        txt4_15 = new javax.swing.JTextField();
+        txt5_13 = new javax.swing.JTextField();
+        txt5_14 = new javax.swing.JTextField();
+        txt5_15 = new javax.swing.JTextField();
+        txt6_13 = new javax.swing.JTextField();
+        txt6_14 = new javax.swing.JTextField();
+        txt6_15 = new javax.swing.JTextField();
+        jPanel15 = new javax.swing.JPanel();
+        txt7_16 = new javax.swing.JTextField();
+        txt7_17 = new javax.swing.JTextField();
+        txt7_18 = new javax.swing.JTextField();
+        txt8_16 = new javax.swing.JTextField();
+        txt8_17 = new javax.swing.JTextField();
+        txt8_18 = new javax.swing.JTextField();
+        txt9_16 = new javax.swing.JTextField();
+        txt9_17 = new javax.swing.JTextField();
+        txt9_18 = new javax.swing.JTextField();
+        jPanel16 = new javax.swing.JPanel();
+        txt1_13 = new javax.swing.JTextField();
+        txt1_14 = new javax.swing.JTextField();
+        txt1_15 = new javax.swing.JTextField();
+        txt2_13 = new javax.swing.JTextField();
+        txt2_14 = new javax.swing.JTextField();
+        txt2_15 = new javax.swing.JTextField();
+        txt3_13 = new javax.swing.JTextField();
+        txt3_14 = new javax.swing.JTextField();
+        txt3_15 = new javax.swing.JTextField();
+        jPanel17 = new javax.swing.JPanel();
+        txt4_16 = new javax.swing.JTextField();
+        txt4_17 = new javax.swing.JTextField();
+        txt4_18 = new javax.swing.JTextField();
+        txt5_16 = new javax.swing.JTextField();
+        txt5_17 = new javax.swing.JTextField();
+        txt5_18 = new javax.swing.JTextField();
+        txt6_16 = new javax.swing.JTextField();
+        txt6_17 = new javax.swing.JTextField();
+        txt6_18 = new javax.swing.JTextField();
+        jPanel18 = new javax.swing.JPanel();
+        txt1_16 = new javax.swing.JTextField();
+        txt1_17 = new javax.swing.JTextField();
+        txt1_18 = new javax.swing.JTextField();
+        txt2_16 = new javax.swing.JTextField();
+        txt2_17 = new javax.swing.JTextField();
+        txt2_18 = new javax.swing.JTextField();
+        txt3_16 = new javax.swing.JTextField();
+        txt3_17 = new javax.swing.JTextField();
+        txt3_18 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jltiempo1 = new javax.swing.JLabel();
+        jltiempo2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sudoku");
@@ -1334,19 +1420,6 @@ public class SudokuOriginal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnCargarMatriz.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        btnCargarMatriz.setText("Cargar Matriz");
-        btnCargarMatriz.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        btnCargarMatriz.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        btnCargarMatriz.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCargarMatrizActionPerformed(evt);
-            }
-        });
-
-        labelInicio.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        labelInicio.setText("Escriba la matriz del sudoku y haga clic en Cargar Matriz");
-
         btnReiniciar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         btnReiniciar.setText("Reiniciar");
         btnReiniciar.addActionListener(new java.awt.event.ActionListener() {
@@ -1363,69 +1436,1283 @@ public class SudokuOriginal extends javax.swing.JFrame {
             }
         });
 
-        btnIntentar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        btnIntentar.setText("Intentar");
-        btnIntentar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIntentarActionPerformed(evt);
+        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(120, 255, 121)));
+
+        txt7_10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt7_10.setBorder(null);
+        txt7_10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt7_10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt7_10KeyTyped(evt);
             }
         });
 
-        labelStart.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        labelStart.setText("Empieza el juego! Llene los campos vacíos y complete el sudoku");
+        txt7_11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt7_11.setBorder(null);
+        txt7_11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt7_11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt7_11KeyTyped(evt);
+            }
+        });
 
-        labelInd.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        labelInd.setText("Haga clic en Intentar para verificar el resultado de su sudoku");
+        txt7_12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt7_12.setBorder(null);
+        txt7_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt7_12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt7_12KeyTyped(evt);
+            }
+        });
+
+        txt8_10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt8_10.setBorder(null);
+        txt8_10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt8_10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt8_10KeyTyped(evt);
+            }
+        });
+
+        txt8_11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt8_11.setBorder(null);
+        txt8_11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt8_11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt8_11KeyTyped(evt);
+            }
+        });
+
+        txt8_12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt8_12.setBorder(null);
+        txt8_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt8_12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt8_12KeyTyped(evt);
+            }
+        });
+
+        txt9_10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt9_10.setBorder(null);
+        txt9_10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt9_10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt9_10KeyTyped(evt);
+            }
+        });
+
+        txt9_11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt9_11.setBorder(null);
+        txt9_11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt9_11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt9_11KeyTyped(evt);
+            }
+        });
+
+        txt9_12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt9_12.setBorder(null);
+        txt9_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt9_12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt9_12KeyTyped(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addComponent(txt7_11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt7_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt7_12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addComponent(txt8_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt8_11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt8_12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addComponent(txt9_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt9_11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt9_12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt7_11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt7_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt7_12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt8_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt8_11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt8_12, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt9_10, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt9_11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt9_12, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(120, 255, 121)));
+
+        txt4_10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt4_10.setBorder(null);
+        txt4_10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt4_10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt4_10KeyTyped(evt);
+            }
+        });
+
+        txt4_11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt4_11.setBorder(null);
+        txt4_11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt4_11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt4_11KeyTyped(evt);
+            }
+        });
+
+        txt4_12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt4_12.setBorder(null);
+        txt4_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt4_12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt4_12KeyTyped(evt);
+            }
+        });
+
+        txt5_10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt5_10.setBorder(null);
+        txt5_10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt5_10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt5_10KeyTyped(evt);
+            }
+        });
+
+        txt5_11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt5_11.setBorder(null);
+        txt5_11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt5_11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt5_11KeyTyped(evt);
+            }
+        });
+
+        txt5_12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt5_12.setBorder(null);
+        txt5_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt5_12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt5_12KeyTyped(evt);
+            }
+        });
+
+        txt6_10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt6_10.setBorder(null);
+        txt6_10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt6_10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt6_10KeyTyped(evt);
+            }
+        });
+
+        txt6_11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt6_11.setBorder(null);
+        txt6_11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt6_11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt6_11KeyTyped(evt);
+            }
+        });
+
+        txt6_12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt6_12.setBorder(null);
+        txt6_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt6_12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt6_12KeyTyped(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addComponent(txt4_11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt4_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt4_12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addComponent(txt5_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt5_11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt5_12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addComponent(txt6_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt6_11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt6_12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt4_11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt4_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt4_12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt5_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt5_11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt5_12, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt6_10, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt6_11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt6_12, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(120, 255, 121)));
+
+        txt1_10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt1_10.setBorder(null);
+        txt1_10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt1_10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt1_10KeyTyped(evt);
+            }
+        });
+
+        txt1_11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt1_11.setBorder(null);
+        txt1_11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt1_11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt1_11KeyTyped(evt);
+            }
+        });
+
+        txt1_12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt1_12.setBorder(null);
+        txt1_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt1_12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt1_12KeyTyped(evt);
+            }
+        });
+
+        txt2_10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt2_10.setBorder(null);
+        txt2_10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt2_10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt2_10KeyTyped(evt);
+            }
+        });
+
+        txt2_11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt2_11.setBorder(null);
+        txt2_11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt2_11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt2_11KeyTyped(evt);
+            }
+        });
+
+        txt2_12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt2_12.setBorder(null);
+        txt2_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt2_12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt2_12KeyTyped(evt);
+            }
+        });
+
+        txt3_10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt3_10.setBorder(null);
+        txt3_10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt3_10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt3_10KeyTyped(evt);
+            }
+        });
+
+        txt3_11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt3_11.setBorder(null);
+        txt3_11.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt3_11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt3_11KeyTyped(evt);
+            }
+        });
+
+        txt3_12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt3_12.setBorder(null);
+        txt3_12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt3_12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt3_12KeyTyped(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addComponent(txt1_11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt1_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt1_12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addComponent(txt2_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt2_11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt2_12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addComponent(txt3_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt3_11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt3_12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt1_11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt1_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt1_12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt2_10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt2_11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt2_12, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt3_10, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt3_11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt3_12, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        txt7_13.setBackground(new java.awt.Color(120, 255, 121));
+        txt7_13.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt7_13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt7_13.setBorder(null);
+        txt7_13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt7_13.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt7_13KeyTyped(evt);
+            }
+        });
+
+        txt7_14.setBackground(new java.awt.Color(120, 255, 121));
+        txt7_14.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt7_14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt7_14.setBorder(null);
+        txt7_14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt7_14.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt7_14KeyTyped(evt);
+            }
+        });
+
+        txt7_15.setBackground(new java.awt.Color(120, 255, 121));
+        txt7_15.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt7_15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt7_15.setBorder(null);
+        txt7_15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt7_15.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt7_15KeyTyped(evt);
+            }
+        });
+
+        txt8_13.setBackground(new java.awt.Color(120, 255, 121));
+        txt8_13.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt8_13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt8_13.setBorder(null);
+        txt8_13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt8_13.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt8_13KeyTyped(evt);
+            }
+        });
+
+        txt8_14.setBackground(new java.awt.Color(120, 255, 121));
+        txt8_14.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt8_14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt8_14.setBorder(null);
+        txt8_14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt8_14.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt8_14KeyTyped(evt);
+            }
+        });
+
+        txt8_15.setBackground(new java.awt.Color(120, 255, 121));
+        txt8_15.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt8_15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt8_15.setBorder(null);
+        txt8_15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt8_15.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt8_15KeyTyped(evt);
+            }
+        });
+
+        txt9_13.setBackground(new java.awt.Color(120, 255, 121));
+        txt9_13.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt9_13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt9_13.setBorder(null);
+        txt9_13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt9_13.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt9_13KeyTyped(evt);
+            }
+        });
+
+        txt9_14.setBackground(new java.awt.Color(120, 255, 121));
+        txt9_14.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt9_14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt9_14.setBorder(null);
+        txt9_14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt9_14.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt9_14KeyTyped(evt);
+            }
+        });
+
+        txt9_15.setBackground(new java.awt.Color(120, 255, 121));
+        txt9_15.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt9_15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt9_15.setBorder(null);
+        txt9_15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt9_15.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt9_15KeyTyped(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addComponent(txt7_14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt7_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt7_15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addComponent(txt8_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt8_14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt8_15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addComponent(txt9_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt9_14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt9_15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt7_14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt7_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt7_15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt8_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt8_14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt8_15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt9_13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt9_14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt9_15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        txt4_13.setBackground(new java.awt.Color(120, 255, 121));
+        txt4_13.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt4_13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt4_13.setBorder(null);
+        txt4_13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt4_13.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt4_13KeyTyped(evt);
+            }
+        });
+
+        txt4_14.setBackground(new java.awt.Color(120, 255, 121));
+        txt4_14.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt4_14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt4_14.setBorder(null);
+        txt4_14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt4_14.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt4_14KeyTyped(evt);
+            }
+        });
+
+        txt4_15.setBackground(new java.awt.Color(120, 255, 121));
+        txt4_15.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt4_15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt4_15.setBorder(null);
+        txt4_15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt4_15.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt4_15KeyTyped(evt);
+            }
+        });
+
+        txt5_13.setBackground(new java.awt.Color(120, 255, 121));
+        txt5_13.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt5_13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt5_13.setBorder(null);
+        txt5_13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt5_13.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt5_13KeyTyped(evt);
+            }
+        });
+
+        txt5_14.setBackground(new java.awt.Color(120, 255, 121));
+        txt5_14.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt5_14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt5_14.setBorder(null);
+        txt5_14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt5_14.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt5_14KeyTyped(evt);
+            }
+        });
+
+        txt5_15.setBackground(new java.awt.Color(120, 255, 121));
+        txt5_15.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt5_15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt5_15.setBorder(null);
+        txt5_15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt5_15.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt5_15KeyTyped(evt);
+            }
+        });
+
+        txt6_13.setBackground(new java.awt.Color(120, 255, 121));
+        txt6_13.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt6_13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt6_13.setBorder(null);
+        txt6_13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt6_13.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt6_13KeyTyped(evt);
+            }
+        });
+
+        txt6_14.setBackground(new java.awt.Color(120, 255, 121));
+        txt6_14.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt6_14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt6_14.setBorder(null);
+        txt6_14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt6_14.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt6_14KeyTyped(evt);
+            }
+        });
+
+        txt6_15.setBackground(new java.awt.Color(120, 255, 121));
+        txt6_15.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt6_15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt6_15.setBorder(null);
+        txt6_15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt6_15.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt6_15KeyTyped(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addComponent(txt4_14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt4_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt4_15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addComponent(txt5_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt5_14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt5_15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addComponent(txt6_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt6_14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt6_15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt4_14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt4_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt4_15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt5_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt5_14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt5_15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt6_13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt6_14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt6_15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(120, 255, 121)));
+
+        txt7_16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt7_16.setBorder(null);
+        txt7_16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt7_16.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt7_16KeyTyped(evt);
+            }
+        });
+
+        txt7_17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt7_17.setBorder(null);
+        txt7_17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt7_17.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt7_17KeyTyped(evt);
+            }
+        });
+
+        txt7_18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt7_18.setBorder(null);
+        txt7_18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt7_18.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt7_18KeyTyped(evt);
+            }
+        });
+
+        txt8_16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt8_16.setBorder(null);
+        txt8_16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt8_16.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt8_16KeyTyped(evt);
+            }
+        });
+
+        txt8_17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt8_17.setBorder(null);
+        txt8_17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt8_17.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt8_17KeyTyped(evt);
+            }
+        });
+
+        txt8_18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt8_18.setBorder(null);
+        txt8_18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt8_18.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt8_18KeyTyped(evt);
+            }
+        });
+
+        txt9_16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt9_16.setBorder(null);
+        txt9_16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt9_16.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt9_16KeyTyped(evt);
+            }
+        });
+
+        txt9_17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt9_17.setBorder(null);
+        txt9_17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt9_17.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt9_17KeyTyped(evt);
+            }
+        });
+
+        txt9_18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt9_18.setBorder(null);
+        txt9_18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt9_18.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt9_18KeyTyped(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addComponent(txt7_17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt7_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt7_18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addComponent(txt8_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt8_17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt8_18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addComponent(txt9_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt9_17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt9_18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt7_17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt7_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt7_18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt8_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt8_17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt8_18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt9_16, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt9_17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt9_18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(120, 255, 121)));
+
+        txt1_13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt1_13.setBorder(null);
+        txt1_13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt1_13.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt1_13KeyTyped(evt);
+            }
+        });
+
+        txt1_14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt1_14.setBorder(null);
+        txt1_14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt1_14.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt1_14KeyTyped(evt);
+            }
+        });
+
+        txt1_15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt1_15.setBorder(null);
+        txt1_15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt1_15.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt1_15KeyTyped(evt);
+            }
+        });
+
+        txt2_13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt2_13.setBorder(null);
+        txt2_13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt2_13.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt2_13KeyTyped(evt);
+            }
+        });
+
+        txt2_14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt2_14.setBorder(null);
+        txt2_14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt2_14.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt2_14KeyTyped(evt);
+            }
+        });
+
+        txt2_15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt2_15.setBorder(null);
+        txt2_15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt2_15.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt2_15KeyTyped(evt);
+            }
+        });
+
+        txt3_13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt3_13.setBorder(null);
+        txt3_13.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt3_13.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt3_13KeyTyped(evt);
+            }
+        });
+
+        txt3_14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt3_14.setBorder(null);
+        txt3_14.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt3_14.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt3_14KeyTyped(evt);
+            }
+        });
+
+        txt3_15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt3_15.setBorder(null);
+        txt3_15.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt3_15.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt3_15KeyTyped(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addComponent(txt1_14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt1_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt1_15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addComponent(txt2_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt2_14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt2_15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addComponent(txt3_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt3_14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt3_15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt1_14, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt1_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt1_15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt2_13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt2_14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt2_15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt3_13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt3_14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt3_15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        txt4_16.setBackground(new java.awt.Color(120, 255, 121));
+        txt4_16.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt4_16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt4_16.setBorder(null);
+        txt4_16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt4_16.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt4_16KeyTyped(evt);
+            }
+        });
+
+        txt4_17.setBackground(new java.awt.Color(120, 255, 121));
+        txt4_17.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt4_17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt4_17.setBorder(null);
+        txt4_17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt4_17.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt4_17KeyTyped(evt);
+            }
+        });
+
+        txt4_18.setBackground(new java.awt.Color(120, 255, 121));
+        txt4_18.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt4_18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt4_18.setBorder(null);
+        txt4_18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt4_18.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt4_18KeyTyped(evt);
+            }
+        });
+
+        txt5_16.setBackground(new java.awt.Color(120, 255, 121));
+        txt5_16.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt5_16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt5_16.setBorder(null);
+        txt5_16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt5_16.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt5_16KeyTyped(evt);
+            }
+        });
+
+        txt5_17.setBackground(new java.awt.Color(120, 255, 121));
+        txt5_17.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt5_17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt5_17.setBorder(null);
+        txt5_17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt5_17.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt5_17KeyTyped(evt);
+            }
+        });
+
+        txt5_18.setBackground(new java.awt.Color(120, 255, 121));
+        txt5_18.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt5_18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt5_18.setBorder(null);
+        txt5_18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt5_18.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt5_18KeyTyped(evt);
+            }
+        });
+
+        txt6_16.setBackground(new java.awt.Color(120, 255, 121));
+        txt6_16.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt6_16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt6_16.setBorder(null);
+        txt6_16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt6_16.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt6_16KeyTyped(evt);
+            }
+        });
+
+        txt6_17.setBackground(new java.awt.Color(120, 255, 121));
+        txt6_17.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt6_17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt6_17.setBorder(null);
+        txt6_17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt6_17.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt6_17KeyTyped(evt);
+            }
+        });
+
+        txt6_18.setBackground(new java.awt.Color(120, 255, 121));
+        txt6_18.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt6_18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt6_18.setBorder(null);
+        txt6_18.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt6_18KeyTyped(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addComponent(txt4_17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt4_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt4_18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addComponent(txt5_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt5_17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt5_18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addComponent(txt6_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt6_17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt6_18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt4_17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt4_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt4_18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt5_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt5_17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt5_18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt6_16, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt6_17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt6_18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        txt1_16.setBackground(new java.awt.Color(120, 255, 121));
+        txt1_16.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt1_16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt1_16.setBorder(null);
+        txt1_16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt1_16.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt1_16KeyTyped(evt);
+            }
+        });
+
+        txt1_17.setBackground(new java.awt.Color(120, 255, 121));
+        txt1_17.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt1_17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt1_17.setBorder(null);
+        txt1_17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt1_17.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt1_17KeyTyped(evt);
+            }
+        });
+
+        txt1_18.setBackground(new java.awt.Color(120, 255, 121));
+        txt1_18.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt1_18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt1_18.setBorder(null);
+        txt1_18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt1_18.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt1_18KeyTyped(evt);
+            }
+        });
+
+        txt2_16.setBackground(new java.awt.Color(120, 255, 121));
+        txt2_16.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt2_16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt2_16.setBorder(null);
+        txt2_16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt2_16.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt2_16KeyTyped(evt);
+            }
+        });
+
+        txt2_17.setBackground(new java.awt.Color(120, 255, 121));
+        txt2_17.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt2_17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt2_17.setBorder(null);
+        txt2_17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt2_17.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt2_17KeyTyped(evt);
+            }
+        });
+
+        txt2_18.setBackground(new java.awt.Color(120, 255, 121));
+        txt2_18.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt2_18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt2_18.setBorder(null);
+        txt2_18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt2_18.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt2_18KeyTyped(evt);
+            }
+        });
+
+        txt3_16.setBackground(new java.awt.Color(120, 255, 121));
+        txt3_16.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt3_16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt3_16.setBorder(null);
+        txt3_16.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt3_16.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt3_16KeyTyped(evt);
+            }
+        });
+
+        txt3_17.setBackground(new java.awt.Color(120, 255, 121));
+        txt3_17.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt3_17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt3_17.setBorder(null);
+        txt3_17.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt3_17.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt3_17KeyTyped(evt);
+            }
+        });
+
+        txt3_18.setBackground(new java.awt.Color(120, 255, 121));
+        txt3_18.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        txt3_18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt3_18.setBorder(null);
+        txt3_18.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txt3_18.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt3_18KeyTyped(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addComponent(txt1_17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt1_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt1_18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addComponent(txt2_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt2_17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt2_18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addComponent(txt3_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt3_17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(txt3_18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt1_17, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt1_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt1_18, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt2_16, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt2_17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt2_18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt3_16, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt3_17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt3_18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jButton1.setText("Salir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelInd)
-                    .addComponent(labelStart)
-                    .addComponent(labelInicio)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, 0)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, 0)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, 0)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCargarMatriz)
-                            .addComponent(btnReiniciar)
-                            .addComponent(btnStart)
-                            .addComponent(btnIntentar))))
-                .addGap(34, 34, 34))
+                            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, 0)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, 0)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(35, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnReiniciar)
+                        .addGap(105, 105, 105)
+                        .addComponent(btnStart)
+                        .addGap(187, 187, 187)
+                        .addComponent(jButton1)
+                        .addGap(53, 53, 53))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jltiempo1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(141, 141, 141))))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(146, 146, 146)
+                    .addComponent(jltiempo2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(507, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(labelInicio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(labelStart)
-                .addGap(11, 11, 11)
-                .addComponent(labelInd)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1434,24 +2721,51 @@ public class SudokuOriginal extends javax.swing.JFrame {
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnCargarMatriz)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnReiniciar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnStart))
-                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(btnIntentar))
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, 0)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(jltiempo1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnReiniciar)
+                            .addComponent(btnStart))
+                        .addGap(24, 24, 24))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(32, 32, 32))))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(499, Short.MAX_VALUE)
+                    .addComponent(jltiempo2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(66, 66, 66)))
         );
 
         pack();
@@ -1780,61 +3094,343 @@ public class SudokuOriginal extends javax.swing.JFrame {
     private void txt9_6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt9_6KeyTyped
         ValidarIngresoCelda.validar(txt9_6, evt);
     }//GEN-LAST:event_txt9_6KeyTyped
-
-    private void btnCargarMatrizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarMatrizActionPerformed
-               
-        try{
-            cargarMatrizOriginal();
-            if (checarFilas()) {
-                JOptionPane.showMessageDialog(null, "No puede haber números repetidos en una misma fila, columna o región."
-                , "Error", JOptionPane.ERROR_MESSAGE);
-            }
-            else if(checarColumnas()){
-                JOptionPane.showMessageDialog(null, "No puede haber números repetidos en una misma fila, columna o región."
-                , "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }catch(NumberFormatException e){
-        }finally{
-            System.out.println("Holas");   
-        }
-    }//GEN-LAST:event_btnCargarMatrizActionPerformed
    
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
-        labelInicio.setVisible(false);
-        labelStart.setVisible(true);
-        labelInd.setVisible(true);
-        limpiarCampo();
-        Random r = new Random();         
-        int cont = 1;
-        while(cont <= 26){
-            int i = r.nextInt(9);
-            int j = r.nextInt(9);
-            colocarPista(i, j);
-            cont++;
-        }
-        verificarCampoVacio();
+            SocketCliente sc = new SocketCliente("localhost",9999);
+            sc.conectar();
+            sc.salida("1");
+            System.out.println(""+sc.leer());
     }//GEN-LAST:event_btnStartActionPerformed
 
     private void btnReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReiniciarActionPerformed
         matrizCero();
         limpiarCampo();
         verificarCampoVacio();
-        labelInicio.setVisible(true);
-        labelStart.setVisible(false);
-        labelInd.setVisible(false);
     }//GEN-LAST:event_btnReiniciarActionPerformed
 
-    private void btnIntentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIntentarActionPerformed
-        cargarMatrizPrueba();
-        if (verificarResultado() == 81) {
-            JOptionPane.showMessageDialog(null, "Resultado: Sudoku Completado", "Resultado", 
-                    JOptionPane.INFORMATION_MESSAGE);
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Resultado: Sudoku Incompleto", "Resultado", 
-                    JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btnIntentarActionPerformed
+    private void txt7_10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt7_10KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt7_10KeyTyped
+
+    private void txt7_11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt7_11KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt7_11KeyTyped
+
+    private void txt7_12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt7_12KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt7_12KeyTyped
+
+    private void txt8_10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt8_10KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt8_10KeyTyped
+
+    private void txt8_11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt8_11KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt8_11KeyTyped
+
+    private void txt8_12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt8_12KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt8_12KeyTyped
+
+    private void txt9_10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt9_10KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt9_10KeyTyped
+
+    private void txt9_11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt9_11KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt9_11KeyTyped
+
+    private void txt9_12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt9_12KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt9_12KeyTyped
+
+    private void txt4_10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt4_10KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt4_10KeyTyped
+
+    private void txt4_11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt4_11KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt4_11KeyTyped
+
+    private void txt4_12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt4_12KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt4_12KeyTyped
+
+    private void txt5_10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt5_10KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt5_10KeyTyped
+
+    private void txt5_11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt5_11KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt5_11KeyTyped
+
+    private void txt5_12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt5_12KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt5_12KeyTyped
+
+    private void txt6_10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt6_10KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt6_10KeyTyped
+
+    private void txt6_11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt6_11KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt6_11KeyTyped
+
+    private void txt6_12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt6_12KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt6_12KeyTyped
+
+    private void txt1_10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1_10KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt1_10KeyTyped
+
+    private void txt1_11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1_11KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt1_11KeyTyped
+
+    private void txt1_12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1_12KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt1_12KeyTyped
+
+    private void txt2_10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt2_10KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt2_10KeyTyped
+
+    private void txt2_11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt2_11KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt2_11KeyTyped
+
+    private void txt2_12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt2_12KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt2_12KeyTyped
+
+    private void txt3_10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt3_10KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt3_10KeyTyped
+
+    private void txt3_11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt3_11KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt3_11KeyTyped
+
+    private void txt3_12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt3_12KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt3_12KeyTyped
+
+    private void txt7_13KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt7_13KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt7_13KeyTyped
+
+    private void txt7_14KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt7_14KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt7_14KeyTyped
+
+    private void txt7_15KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt7_15KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt7_15KeyTyped
+
+    private void txt8_13KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt8_13KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt8_13KeyTyped
+
+    private void txt8_14KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt8_14KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt8_14KeyTyped
+
+    private void txt8_15KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt8_15KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt8_15KeyTyped
+
+    private void txt9_13KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt9_13KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt9_13KeyTyped
+
+    private void txt9_14KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt9_14KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt9_14KeyTyped
+
+    private void txt9_15KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt9_15KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt9_15KeyTyped
+
+    private void txt4_13KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt4_13KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt4_13KeyTyped
+
+    private void txt4_14KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt4_14KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt4_14KeyTyped
+
+    private void txt4_15KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt4_15KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt4_15KeyTyped
+
+    private void txt5_13KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt5_13KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt5_13KeyTyped
+
+    private void txt5_14KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt5_14KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt5_14KeyTyped
+
+    private void txt5_15KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt5_15KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt5_15KeyTyped
+
+    private void txt6_13KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt6_13KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt6_13KeyTyped
+
+    private void txt6_14KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt6_14KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt6_14KeyTyped
+
+    private void txt6_15KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt6_15KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt6_15KeyTyped
+
+    private void txt7_16KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt7_16KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt7_16KeyTyped
+
+    private void txt7_17KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt7_17KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt7_17KeyTyped
+
+    private void txt7_18KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt7_18KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt7_18KeyTyped
+
+    private void txt8_16KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt8_16KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt8_16KeyTyped
+
+    private void txt8_17KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt8_17KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt8_17KeyTyped
+
+    private void txt8_18KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt8_18KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt8_18KeyTyped
+
+    private void txt9_16KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt9_16KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt9_16KeyTyped
+
+    private void txt9_17KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt9_17KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt9_17KeyTyped
+
+    private void txt9_18KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt9_18KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt9_18KeyTyped
+
+    private void txt1_13KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1_13KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt1_13KeyTyped
+
+    private void txt1_14KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1_14KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt1_14KeyTyped
+
+    private void txt1_15KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1_15KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt1_15KeyTyped
+
+    private void txt2_13KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt2_13KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt2_13KeyTyped
+
+    private void txt2_14KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt2_14KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt2_14KeyTyped
+
+    private void txt2_15KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt2_15KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt2_15KeyTyped
+
+    private void txt3_13KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt3_13KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt3_13KeyTyped
+
+    private void txt3_14KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt3_14KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt3_14KeyTyped
+
+    private void txt3_15KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt3_15KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt3_15KeyTyped
+
+    private void txt4_16KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt4_16KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt4_16KeyTyped
+
+    private void txt4_17KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt4_17KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt4_17KeyTyped
+
+    private void txt4_18KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt4_18KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt4_18KeyTyped
+
+    private void txt5_16KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt5_16KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt5_16KeyTyped
+
+    private void txt5_17KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt5_17KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt5_17KeyTyped
+
+    private void txt5_18KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt5_18KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt5_18KeyTyped
+
+    private void txt6_16KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt6_16KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt6_16KeyTyped
+
+    private void txt6_17KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt6_17KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt6_17KeyTyped
+
+    private void txt6_18KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt6_18KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt6_18KeyTyped
+
+    private void txt1_16KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1_16KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt1_16KeyTyped
+
+    private void txt1_17KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1_17KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt1_17KeyTyped
+
+    private void txt1_18KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1_18KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt1_18KeyTyped
+
+    private void txt2_16KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt2_16KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt2_16KeyTyped
+
+    private void txt2_17KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt2_17KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt2_17KeyTyped
+
+    private void txt2_18KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt2_18KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt2_18KeyTyped
+
+    private void txt3_16KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt3_16KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt3_16KeyTyped
+
+    private void txt3_17KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt3_17KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt3_17KeyTyped
+
+    private void txt3_18KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt3_18KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt3_18KeyTyped
 
     public void cargarMatrizOriginal(){
         sudo.m1[0][0] = Integer.parseInt(txt1_1.getText()); sudo.m1[0][1] = Integer.parseInt(txt1_2.getText());       
@@ -2687,11 +4283,19 @@ public class SudokuOriginal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCargarMatriz;
-    private javax.swing.JButton btnIntentar;
     private javax.swing.JButton btnReiniciar;
     private javax.swing.JButton btnStart;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -2700,10 +4304,18 @@ public class SudokuOriginal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JLabel labelInd;
-    private javax.swing.JLabel labelInicio;
-    private javax.swing.JLabel labelStart;
+    private javax.swing.JLabel jltiempo1;
+    private javax.swing.JLabel jltiempo2;
     private javax.swing.JTextField txt1_1;
+    private javax.swing.JTextField txt1_10;
+    private javax.swing.JTextField txt1_11;
+    private javax.swing.JTextField txt1_12;
+    private javax.swing.JTextField txt1_13;
+    private javax.swing.JTextField txt1_14;
+    private javax.swing.JTextField txt1_15;
+    private javax.swing.JTextField txt1_16;
+    private javax.swing.JTextField txt1_17;
+    private javax.swing.JTextField txt1_18;
     private javax.swing.JTextField txt1_2;
     private javax.swing.JTextField txt1_3;
     private javax.swing.JTextField txt1_4;
@@ -2713,6 +4325,15 @@ public class SudokuOriginal extends javax.swing.JFrame {
     private javax.swing.JTextField txt1_8;
     private javax.swing.JTextField txt1_9;
     private javax.swing.JTextField txt2_1;
+    private javax.swing.JTextField txt2_10;
+    private javax.swing.JTextField txt2_11;
+    private javax.swing.JTextField txt2_12;
+    private javax.swing.JTextField txt2_13;
+    private javax.swing.JTextField txt2_14;
+    private javax.swing.JTextField txt2_15;
+    private javax.swing.JTextField txt2_16;
+    private javax.swing.JTextField txt2_17;
+    private javax.swing.JTextField txt2_18;
     private javax.swing.JTextField txt2_2;
     private javax.swing.JTextField txt2_3;
     private javax.swing.JTextField txt2_4;
@@ -2722,6 +4343,15 @@ public class SudokuOriginal extends javax.swing.JFrame {
     private javax.swing.JTextField txt2_8;
     private javax.swing.JTextField txt2_9;
     private javax.swing.JTextField txt3_1;
+    private javax.swing.JTextField txt3_10;
+    private javax.swing.JTextField txt3_11;
+    private javax.swing.JTextField txt3_12;
+    private javax.swing.JTextField txt3_13;
+    private javax.swing.JTextField txt3_14;
+    private javax.swing.JTextField txt3_15;
+    private javax.swing.JTextField txt3_16;
+    private javax.swing.JTextField txt3_17;
+    private javax.swing.JTextField txt3_18;
     private javax.swing.JTextField txt3_2;
     private javax.swing.JTextField txt3_3;
     private javax.swing.JTextField txt3_4;
@@ -2731,6 +4361,15 @@ public class SudokuOriginal extends javax.swing.JFrame {
     private javax.swing.JTextField txt3_8;
     private javax.swing.JTextField txt3_9;
     private javax.swing.JTextField txt4_1;
+    private javax.swing.JTextField txt4_10;
+    private javax.swing.JTextField txt4_11;
+    private javax.swing.JTextField txt4_12;
+    private javax.swing.JTextField txt4_13;
+    private javax.swing.JTextField txt4_14;
+    private javax.swing.JTextField txt4_15;
+    private javax.swing.JTextField txt4_16;
+    private javax.swing.JTextField txt4_17;
+    private javax.swing.JTextField txt4_18;
     private javax.swing.JTextField txt4_2;
     private javax.swing.JTextField txt4_3;
     private javax.swing.JTextField txt4_4;
@@ -2740,6 +4379,15 @@ public class SudokuOriginal extends javax.swing.JFrame {
     private javax.swing.JTextField txt4_8;
     private javax.swing.JTextField txt4_9;
     private javax.swing.JTextField txt5_1;
+    private javax.swing.JTextField txt5_10;
+    private javax.swing.JTextField txt5_11;
+    private javax.swing.JTextField txt5_12;
+    private javax.swing.JTextField txt5_13;
+    private javax.swing.JTextField txt5_14;
+    private javax.swing.JTextField txt5_15;
+    private javax.swing.JTextField txt5_16;
+    private javax.swing.JTextField txt5_17;
+    private javax.swing.JTextField txt5_18;
     private javax.swing.JTextField txt5_2;
     private javax.swing.JTextField txt5_3;
     private javax.swing.JTextField txt5_4;
@@ -2749,6 +4397,15 @@ public class SudokuOriginal extends javax.swing.JFrame {
     private javax.swing.JTextField txt5_8;
     private javax.swing.JTextField txt5_9;
     private javax.swing.JTextField txt6_1;
+    private javax.swing.JTextField txt6_10;
+    private javax.swing.JTextField txt6_11;
+    private javax.swing.JTextField txt6_12;
+    private javax.swing.JTextField txt6_13;
+    private javax.swing.JTextField txt6_14;
+    private javax.swing.JTextField txt6_15;
+    private javax.swing.JTextField txt6_16;
+    private javax.swing.JTextField txt6_17;
+    private javax.swing.JTextField txt6_18;
     private javax.swing.JTextField txt6_2;
     private javax.swing.JTextField txt6_3;
     private javax.swing.JTextField txt6_4;
@@ -2758,6 +4415,15 @@ public class SudokuOriginal extends javax.swing.JFrame {
     private javax.swing.JTextField txt6_8;
     private javax.swing.JTextField txt6_9;
     private javax.swing.JTextField txt7_1;
+    private javax.swing.JTextField txt7_10;
+    private javax.swing.JTextField txt7_11;
+    private javax.swing.JTextField txt7_12;
+    private javax.swing.JTextField txt7_13;
+    private javax.swing.JTextField txt7_14;
+    private javax.swing.JTextField txt7_15;
+    private javax.swing.JTextField txt7_16;
+    private javax.swing.JTextField txt7_17;
+    private javax.swing.JTextField txt7_18;
     private javax.swing.JTextField txt7_2;
     private javax.swing.JTextField txt7_3;
     private javax.swing.JTextField txt7_4;
@@ -2767,6 +4433,15 @@ public class SudokuOriginal extends javax.swing.JFrame {
     private javax.swing.JTextField txt7_8;
     private javax.swing.JTextField txt7_9;
     private javax.swing.JTextField txt8_1;
+    private javax.swing.JTextField txt8_10;
+    private javax.swing.JTextField txt8_11;
+    private javax.swing.JTextField txt8_12;
+    private javax.swing.JTextField txt8_13;
+    private javax.swing.JTextField txt8_14;
+    private javax.swing.JTextField txt8_15;
+    private javax.swing.JTextField txt8_16;
+    private javax.swing.JTextField txt8_17;
+    private javax.swing.JTextField txt8_18;
     private javax.swing.JTextField txt8_2;
     private javax.swing.JTextField txt8_3;
     private javax.swing.JTextField txt8_4;
@@ -2776,6 +4451,15 @@ public class SudokuOriginal extends javax.swing.JFrame {
     private javax.swing.JTextField txt8_8;
     private javax.swing.JTextField txt8_9;
     private javax.swing.JTextField txt9_1;
+    private javax.swing.JTextField txt9_10;
+    private javax.swing.JTextField txt9_11;
+    private javax.swing.JTextField txt9_12;
+    private javax.swing.JTextField txt9_13;
+    private javax.swing.JTextField txt9_14;
+    private javax.swing.JTextField txt9_15;
+    private javax.swing.JTextField txt9_16;
+    private javax.swing.JTextField txt9_17;
+    private javax.swing.JTextField txt9_18;
     private javax.swing.JTextField txt9_2;
     private javax.swing.JTextField txt9_3;
     private javax.swing.JTextField txt9_4;
